@@ -4,29 +4,32 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Page 1</title>
     <link rel="stylesheet" href="page1.css" />
   </head>
   <body>
+    <script src="index.js">
+    </script>
     <div class="container">
       <div class="regform">
         <h4>Registration Form</h4>
       </div>
       <div>
-        <form>
+        <form id="form1" name="firstForm">
           <div class="line">
             <h4 class="name">Name<span class="astric">*</span></h4>
             <div class="inputbox">
-              <input type="text" placeholder="First" required />
-              <input type="text" placeholder="Last" required />
+              <input onchange="changeData1(event)" name="firstName" type="text" placeholder="First" required />
+              <input onchange="changeData1(event)" name="lastName" type="text" placeholder="Last" required />
             </div>
           </div>
           <div class="line">
             <h4 class="name">Date of Birth<span class="astric">*</span></h4>
             <div class="singleinputbox">
               <input
+              onchange="changeData1(event)"
                 type="date"
-                name="Date of Birth"
+                name="DateofBirth"
                 size="15"
                 maxlength="30"
               />
@@ -37,8 +40,9 @@
             <h4 class="name">Email<span class="astric">*</span></h4>
             <div class="singleinputbox">
               <input
+              onchange="changeData1(event)"
                 type="email"
-                name="Email"
+                name="email"
                 size="15"
                 maxlength="30"
                 placeholder="Email"
@@ -49,31 +53,31 @@
           <div class="line">
             <h4 class="name">Father's name<span class="astric">*</span></h4>
             <div class="inputbox">
-              <input type="text" placeholder="First" required />
-              <input type="text" placeholder="Last" required />
+              <input onchange="changeData1(event)" name="fatherFirstName" type="text" placeholder="First" required />
+              <input onchange="changeData1(event)" name="fatherLastName" type="text" placeholder="Last" required />
             </div>
           </div>
 
           <div class="line">
             <h4 class="name">Mother's name<span class="astric">*</span></h4>
             <div class="inputbox">
-              <input type="text" placeholder="First" required />
-              <input type="text" placeholder="Last" required />
+              <input onchange="changeData1(event)" name="motherFirstName" type="text" placeholder="First" required />
+              <input onchange="changeData1(event)" name="motherLastName" type="text" placeholder="Last" required />
             </div>
           </div>
 
           <div class="line">
             <h4 class="name">Gender<span class="astric">*</span></h4>
             <div class="radiobox">
-              <input type="radio" name="Gender" size="15" maxlength="30" /> M
+              <input onchange="changeData1(event)" value="M" type="radio" name="Gender" size="15" maxlength="30" required /> M
               <br />
-              <input type="radio" name="Gender" size="15" maxlength="30" /> F
+              <input onchange="changeData1(event)" value="F" type="radio" name="Gender" size="15" maxlength="30" required /> F
             </div>
           </div>
           <div class="line">
             <h4 class="name">Nationality<span class="astric">*</span></h4>
             <div class="singleinputbox">
-              <input type="text" />
+              <input onchange="changeData1(event)" name="nationality" type="text" />
             </div>
           </div>
 
@@ -83,28 +87,30 @@
               <span class="astric">*</span>
             </h4>
             <div class="singleinputbox">
-              <input type="text" placeholder="Street Address" required />
+              <input onchange="changeData1(event)" name="homeAddress" type="text" placeholder="Street Address" required />
             </div>
             <div class="inputbox">
-              <input type="text" placeholder="City" required />
-              <input type="text" placeholder="Country" required />
+              <input onchange="changeData1(event)" name="city" type="text" placeholder="City" required />
+              <input onchange="changeData1(event)" name="country" type="text" placeholder="Country" required />
             </div>
           </div>
 
           <div class="line">
             <h4 class="name">Telephone-Home<span class="astric">*</span></h4>
             <div class="singleinputbox">
-              <input type="text" placeholder="### ### ####" required />
+              <input onchange="changeData1(event)" name="telephone" type="text" placeholder="### ### ####" pattern="[1-9]{1}[0-9]{9}" required />
             </div>
           </div>
 
           <div class="line">
-            <h4 class="name">Telephone-Mobile<span class="astric">*</span></h4>
+            <h4 class="name">Telephone-Mobile<span class="astric" >*</span></h4>
             <div class="singleinputbox">
-              <input type="text" placeholder="### ### ####" required />
+              <input onchange="changeData1(event)" name="mobile" pattern="[1-9]{1}[0-9]{9}" type="text" placeholder="### ### ####" required />
             </div>
           </div>
+          <button  type="submit" style="padding:5px; width:100px;" onclick="[validateMail(document.firstForm.email),submitData1()]" >Submit</button>
         </form>
+        
       </div>
     </div>
   </body>
